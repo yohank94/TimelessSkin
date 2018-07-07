@@ -1,0 +1,8 @@
+#MessageInput {
+  height: auto;
+}
+
+#MessageInput:focus {
+  height: 200px;
+  resize: none;
+}

@@ -1,0 +1,12 @@
+.title p a {
+  color: rgb(102, 102, 102);
+}
+
+.title p a:hover {
+  color: rgb(140, 116, 36);
+}
+
+.title h3 {
+  font-family: Dancing Script;
+  color: rgb(140, 116, 36);
+}
