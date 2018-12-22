@@ -6,7 +6,8 @@ const imageStyle = {
   width: '100%',
   minWidth: 200,
   height: 220,
-  padding: 30
+  padding: 30,
+  maxWidth: 500
 };
 
 const visitTitle = 'To Get Your Optimum Result, Visit Our Local Partners';

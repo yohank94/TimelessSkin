@@ -1,24 +1,24 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { SideNav, SideNavItem, Button, Icon } from 'react-materialize';
-import $ from 'jquery';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { SideNav, SideNavItem, Button, Icon } from "react-materialize";
+import $ from "jquery";
 
-import { HEADER_MENU } from './index';
+import { HEADER_MENU } from "./index";
 
 const renderList = () =>
   HEADER_MENU.map((menu, index) => {
-    const path = menu === 'Home' ? '/' : menu.replace(' ', '').toLowerCase();
+    const path = menu === "Home" ? "/" : menu.replace(" ", "").toLowerCase();
     return (
       <NavLink
         to={path}
         style={{
           width: 300,
-          color: 'rgb(140, 116, 36)',
-          display: 'flex',
-          flexDirection: 'column',
+          color: "rgb(140, 116, 36)",
+          display: "flex",
+          flexDirection: "column",
           height: 50,
           padding: 30,
-          justifyContent: 'center'
+          justifyContent: "center"
         }}
         key={index}
       >
@@ -27,14 +27,14 @@ const renderList = () =>
     );
   });
 
-const renderUserView = ({ auth }) => {
+const renderUserView = auth => {
   const userName =
     auth == null
-      ? 'Welcome, Guest'
+      ? "Welcome, Guest"
       : `${auth[0].firstname} ${auth[0].lastname}`;
   const email =
     auth == null ? (
-      <a href="/auth/google" style={{ color: 'white' }}>
+      <a href="/login" style={{ color: "white" }}>
         Login
       </a>
     ) : (
@@ -46,10 +46,10 @@ const renderUserView = ({ auth }) => {
       user={{
         name: userName,
         email: email,
-        background: require('../../images/TimelessSkinSmall.png')
+        background: require("../../images/TimelessSkinSmall.png")
       }}
       className="blue"
-      style={{ width: 310, height: 'auto' }}
+      style={{ width: 310, height: "auto" }}
     />
   );
 };
@@ -59,14 +59,14 @@ const Dropdown = ({ auth }) => (
     <div className="nav col s1">
       <SideNav
         trigger={
-          <Button style={{ backgroundColor: 'rgb(140, 116, 36)' }}>Menu</Button>
+          <Button style={{ backgroundColor: "rgb(140, 116, 36)" }}>Menu</Button>
         }
         options={{
           menuWidth: 300,
           closeOnClick: true
         }}
       >
-        {renderUserView({ auth })}
+        {renderUserView(auth)}
         {renderList()}
       </SideNav>
     </div>
